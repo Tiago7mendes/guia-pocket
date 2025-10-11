@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">Guia-Pocket</string>
+    <string name="app_name">Smart Services</string>
+
+    <!-- Main screen -->
+    <string name="title_main">Service List</string>
+    <string name="service_category">Category</string>
+    <string name="service_description">Description</string>
+    <string name="details_button">View Details</string>
+
+    <!-- Service examples -->
+    <string name="service_cleaning">Cleaning</string>
+    <string name="service_repair">Repair</string>
+    <string name="service_delivery">Delivery</string>
+    <string name="service_tutoring">Tutoring</string>
+    <string name="service_design">Design</string>
+    <string name="service_consulting">Consulting</string>
+
+    <!-- Detail screen -->
+    <string name="details_title">Service Details</string>
+    <string name="service_name_label">Service:</string>
+    <string name="category_label">Category:</string>
+    <string name="description_label">Description:</string>
 </resources>

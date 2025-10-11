@@ -1,5 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Cores principais -->
+    <color name="colorPrimary">#3B82F6</color> <!-- Azul moderno -->
+    <color name="colorPrimaryVariant">#2563EB</color> <!-- Azul mais escuro -->
+    <color name="colorSecondary">#10B981</color> <!-- Verde turquesa suave -->
+
+    <!-- Fundo e texto -->
+    <color name="background">#F9FAFB</color> <!-- Cinza bem claro -->
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#111827</color> <!-- Quase preto -->
+    <color name="textSecondary">#6B7280</color> <!-- Cinza moderno -->
+
+    <!-- Destaques -->
+    <color name="divider">#E5E7EB</color>
 </resources>

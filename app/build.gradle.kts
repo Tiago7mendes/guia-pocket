@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.guia_pocket"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.guia_pocket"
         minSdk = 33
-        targetSdk = 36
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 

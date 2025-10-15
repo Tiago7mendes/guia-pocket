@@ -1,23 +1,11 @@
 <resources>
-    <string name="app_name">Serviços Inteligentes</string>
+    <string name="app_name">Lista do Spotify</string>
 
     <!-- Tela principal -->
-    <string name="title_main">Lista de Serviços</string>
-    <string name="service_category">Categoria</string>
-    <string name="service_description">Descrição</string>
-    <string name="details_button">Ver Detalhes</string>
+    <string name="title_main">Lista de Músicas</string>
+    <string name="toast_playing">Tocando:</string>
 
-    <!-- Exemplos de serviços -->
-    <string name="service_cleaning">Limpeza</string>
-    <string name="service_repair">Reparo</string>
-    <string name="service_delivery">Entrega</string>
-    <string name="service_tutoring">Aulas Particulares</string>
-    <string name="service_design">Design</string>
-    <string name="service_consulting">Consultoria</string>
-
-    <!-- Tela de detalhes -->
-    <string name="details_title">Detalhes do Serviço</string>
-    <string name="service_name_label">Serviço:</string>
-    <string name="category_label">Categoria:</string>
-    <string name="description_label">Descrição:</string>
+    <!-- Informações das músicas -->
+    <string name="label_artist">Artista</string>
+    <string name="label_genre">Gênero</string>
 </resources>

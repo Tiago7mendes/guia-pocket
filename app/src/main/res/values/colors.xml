@@ -9,4 +9,5 @@
     <color name="surface">#F3F4F6</color>
     <color name="textPrimary">#000000</color>
     <color name="textSecondary">#4B5563</color>
+    <color name="divider">#E5E7EB</color>
 </resources>

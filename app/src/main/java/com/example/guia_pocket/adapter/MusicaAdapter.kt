@@ -31,6 +31,7 @@ class MusicaAdapter(
         binding.tvNome.text = musica.nome
         binding.tvArtista.text = musica.artista
         binding.tvGenero.text = musica.genero
+        binding.tvDescricao.text = musica.descricao
 
         return itemView
     }

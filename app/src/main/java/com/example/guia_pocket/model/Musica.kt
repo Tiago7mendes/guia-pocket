@@ -8,5 +8,6 @@ data class Musica(
     val artista: String,
     val genero: String,
     val descricao: String,
-    val linkSpotify: String
+    val linkSpotify: String,
+    val audioResId: Int
 ) : Serializable

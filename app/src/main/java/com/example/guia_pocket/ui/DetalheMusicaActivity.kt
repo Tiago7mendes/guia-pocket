@@ -1,6 +1,7 @@
 package com.example.guia_pocket.ui
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,21 +9,21 @@ import com.example.guia_pocket.databinding.ActivityDetalheMusicaBinding
 import com.example.guia_pocket.model.Musica
 
 class DetalheMusicaActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityDetalheMusicaBinding
     private lateinit var musica: Musica
+    private var player: MediaPlayer? = null
+    private var tocando = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetalheMusicaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadData()
+        musica = intent.getSerializableExtra("musica") as Musica
+
         setupViews()
         setupListeners()
-    }
-
-    private fun loadData() {
-        musica = intent.getSerializableExtra("musica") as Musica
     }
 
     private fun setupViews() {
@@ -35,8 +36,20 @@ class DetalheMusicaActivity : AppCompatActivity() {
 
     private fun setupListeners() {
         binding.btnSpotify.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(musica.linkSpotify))
-            startActivity(intent)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(musica.linkSpotify)))
+        }
+
+        binding.btnPlay.setOnClickListener {
+            if (!tocando) {
+                player = MediaPlayer.create(this, musica.audioResId)
+                player?.start()
+                tocando = true
+                binding.btnPlay.text = "⏸️ Pausar"
+            } else {
+                player?.pause()
+                tocando = false
+                binding.btnPlay.text = "▶️ Tocar"
+            }
         }
 
         binding.btnShare.setOnClickListener {
@@ -46,6 +59,14 @@ class DetalheMusicaActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(shareIntent, "Compartilhar música"))
         }
 
-        binding.btnVoltar.setOnClickListener { finish() }
+        binding.btnVoltar.setOnClickListener {
+            player?.release()
+            finish()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        player?.release()
     }
 }

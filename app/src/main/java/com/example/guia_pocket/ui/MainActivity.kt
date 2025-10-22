@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             Musica(
                 R.drawable.billie, "Wildflower", "Billie Eilish", "Alternative Pop",
                 "Uma faixa suave e atmosférica, com vocais marcantes e melodia envolvente.",
-                "https://open.spotify.com/track/xyz", // substitua pelo link real se quiser
+                "https://open.spotify.com/intl-pt/track/3QaPy1KgI7nu9FJEQUgn6h", // substitua pelo link real se quiser
                 R.raw.wildflower
             ),
             Musica(
@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
                 R.raw.levitating
             ),
             Musica(
-                R.drawable.lewis, "Someone You Loved", "Lewis Capaldi", "Pop Soul",
+                R.drawable.lewis, "Before You Go", "Lewis Capaldi", "Pop Soul",
                 "Um hino melancólico sobre amor e perda, lançado em 2019.",
                 "https://open.spotify.com/track/7qEHsqek33rTcFNT9PFqLf",
-                R.raw.someone_you_loved
+                R.raw.before_you_go
             ),
             Musica(
                 R.drawable.arctic, "Do I Wanna Know?", "Arctic Monkeys", "Indie Rock",

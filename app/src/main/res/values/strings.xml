@@ -1,11 +1,22 @@
 <resources>
+    <!-- App -->
     <string name="app_name">Spotify List</string>
 
     <!-- Main screen -->
     <string name="title_main">Music List</string>
-    <string name="toast_playing">Playing:</string>
 
-    <!-- Music info labels -->
+    <!-- Details screen -->
     <string name="label_artist">Artist</string>
     <string name="label_genre">Genre</string>
+    <string name="label_description">Description</string>
+    <string name="btn_play">▶️ Play</string>
+    <string name="btn_pause">⏸️ Pause</string>
+    <string name="btn_spotify">Open on Spotify</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_back">Back</string>
+
+    <!-- Messages -->
+    <string name="msg_share_title">Share song</string>
+    <string name="msg_share_text">🎵 %1$s - %2$s</string>
 </resources>
+

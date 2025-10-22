@@ -1,13 +1,19 @@
 <resources>
-    <!-- Verde principal Spotify -->
+    <!-- Paleta principal -->
     <color name="spotifyGreen">#1DB954</color>
     <color name="spotifyGreenDark">#1AA34A</color>
     <color name="spotifyBlack">#121212</color>
 
-    <!-- Fundo e texto -->
+    <!-- Fundo e superfícies -->
     <color name="background">#FFFFFF</color>
     <color name="surface">#F3F4F6</color>
+    <color name="divider">#E5E7EB</color>
+
+    <!-- Texto -->
     <color name="textPrimary">#000000</color>
     <color name="textSecondary">#4B5563</color>
-    <color name="divider">#E5E7EB</color>
+
+    <!-- Estados -->
+    <color name="accent">#1DB954</color>
+    <color name="error">#E53935</color>
 </resources>

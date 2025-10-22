@@ -1,11 +1,21 @@
 <resources>
-    <string name="app_name">Lista do Spotify</string>
+    <!-- App -->
+    <string name="app_name">Lista Spotify</string>
 
     <!-- Tela principal -->
     <string name="title_main">Lista de Músicas</string>
-    <string name="toast_playing">Tocando:</string>
 
-    <!-- Informações das músicas -->
+    <!-- Tela de detalhes -->
     <string name="label_artist">Artista</string>
     <string name="label_genre">Gênero</string>
+    <string name="label_description">Descrição</string>
+    <string name="btn_play">▶️ Tocar</string>
+    <string name="btn_pause">⏸️ Pausar</string>
+    <string name="btn_spotify">Abrir no Spotify</string>
+    <string name="btn_share">Compartilhar</string>
+    <string name="btn_back">Voltar</string>
+
+    <!-- Mensagens -->
+    <string name="msg_share_title">Compartilhar música</string>
+    <string name="msg_share_text">🎵 %1$s - %2$s</string>
 </resources>

@@ -1,93 +1,188 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:orientation="vertical"
     android:background="@color/background">
 
-    <LinearLayout
+    <!-- Conteúdo principal rolável -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Capa da música -->
+            <ImageView
+                android:id="@+id/imgCapa"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_card_image" />
+
+            <!-- Nome -->
+            <TextView
+                android:id="@+id/tvNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_description"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Artista -->
+            <TextView
+                android:id="@+id/tvArtista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_artist"
+                android:textSize="18sp"
+                android:textColor="@color/textSecondary"
+                android:layout_marginBottom="2dp" />
+
+            <!-- Gênero -->
+            <TextView
+                android:id="@+id/tvGenero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_genre"
+                android:textSize="15sp"
+                android:textColor="@color/spotifyGreen"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Descrição -->
+            <TextView
+                android:id="@+id/tvDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_description"
+                android:textSize="15sp"
+                android:textColor="@color/textSecondary"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Botões principais -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSpotify"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_spotify"
+                android:textStyle="bold"
+                android:backgroundTint="@color/spotifyGreen"
+                android:textColor="@color/spotifyBlack"
+                android:cornerRadius="16dp"
+                android:layout_marginBottom="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_share"
+                android:backgroundTint="@color/spotifyGreenDark"
+                android:textColor="@color/spotifyBlack"
+                android:cornerRadius="16dp"
+                android:layout_marginBottom="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVoltar"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_back"
+                android:backgroundTint="@color/spotifyBlack"
+                android:textColor="@android:color/white"
+                android:cornerRadius="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Mini player fixo -->
+    <LinearLayout
+        android:id="@+id/miniPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="@color/surface"
+        android:elevation="8dp">
+
+        <!-- Capa pequena -->
         <ImageView
-            android:id="@+id/imgCapa"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:id="@+id/imgMiniCapa"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:scaleType="centerCrop"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_card_image" />
 
-        <TextView
-            android:id="@+id/tvNome"
-            android:layout_width="wrap_content"
+        <!-- Nome e artista -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Nome da Música"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvArtista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Artista"
-            android:textSize="18sp"
-            android:layout_marginBottom="2dp" />
+            <TextView
+                android:id="@+id/tvMiniNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome da Música"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/tvGenero"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gênero"
-            android:textSize="15sp"
-            android:textColor="@color/spotifyGreen"
-            android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/tvMiniArtista"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Artista"
+                android:textColor="@color/textSecondary"
+                android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/tvDescricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Descrição"
-            android:textSize="14sp"
-            android:layout_marginBottom="20dp" />
+            <!-- Barra de progresso -->
+            <ProgressBar
+                android:id="@+id/progressoMusica"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="8dp"
+                android:progress="0"
+                android:progressTint="@color/spotifyGreen"
+                android:backgroundTint="@color/divider"
+                android:max="100" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btnPlay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="▶️ Tocar"
+        <!-- Botões Play e Stop -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMiniPlay"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:backgroundTint="@color/spotifyGreen"
+            android:text="▶️"
+            android:textStyle="bold"
             android:textColor="@color/spotifyBlack"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp" />
+            android:cornerRadius="16dp" />
 
-        <Button
-            android:id="@+id/btnSpotify"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Abrir no Spotify"
-            android:backgroundTint="@color/spotifyGreenDark"
-            android:textColor="@color/spotifyBlack"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnShare"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Compartilhar"
-            android:backgroundTint="@color/surface"
-            android:textColor="@color/textPrimary"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp" />
-
-        <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Voltar"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMiniStop"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:backgroundTint="@color/spotifyBlack"
+            android:text="⏹️"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:cornerRadius="16dp"
+            android:layout_marginStart="8dp" />
     </LinearLayout>
-</ScrollView>
+</LinearLayout>

@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GuiaPocket">
+        android:theme="@style/Theme.SpotifyList">
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetalheActivity"
+            android:name=".ui.DetalheMusicaActivity"
             android:exported="true">
         </activity>
     </application>

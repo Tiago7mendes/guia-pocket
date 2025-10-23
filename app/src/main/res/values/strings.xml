@@ -18,5 +18,9 @@
     <!-- Messages -->
     <string name="msg_share_title">Share song</string>
     <string name="msg_share_text">🎵 %1$s - %2$s</string>
+    <string name="label_nome_musica">Music Name</string>
+    <string name="label_artista">Artist</string>
+    <string name="symbol_play">▶️</string>
+    <string name="symbol_stop">⏹️</string>
 </resources>
 

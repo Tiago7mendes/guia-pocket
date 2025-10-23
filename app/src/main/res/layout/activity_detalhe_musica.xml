@@ -79,7 +79,6 @@
                 android:textStyle="bold"
                 android:backgroundTint="@color/spotifyGreen"
                 android:textColor="@color/spotifyBlack"
-                android:cornerRadius="16dp"
                 android:layout_marginBottom="10dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -90,7 +89,6 @@
                 android:text="@string/btn_share"
                 android:backgroundTint="@color/spotifyGreenDark"
                 android:textColor="@color/spotifyBlack"
-                android:cornerRadius="16dp"
                 android:layout_marginBottom="10dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -100,8 +98,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btn_back"
                 android:backgroundTint="@color/spotifyBlack"
-                android:textColor="@android:color/white"
-                android:cornerRadius="16dp" />
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>
 
@@ -123,7 +120,7 @@
             android:layout_height="60dp"
             android:scaleType="centerCrop"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/bg_card_image" />
+            android:background="@drawable/bg_card_image"/>
 
         <!-- Nome e artista -->
         <LinearLayout
@@ -136,7 +133,7 @@
                 android:id="@+id/tvMiniNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome da Música"
+                android:text="@string/label_nome_musica"
                 android:textStyle="bold"
                 android:textColor="@color/textPrimary"
                 android:textSize="15sp" />
@@ -145,11 +142,10 @@
                 android:id="@+id/tvMiniArtista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Artista"
+                android:text="@string/label_artista"
                 android:textColor="@color/textSecondary"
                 android:textSize="13sp" />
 
-            <!-- Barra de progresso -->
             <ProgressBar
                 android:id="@+id/progressoMusica"
                 style="?android:attr/progressBarStyleHorizontal"
@@ -162,17 +158,15 @@
                 android:max="100" />
         </LinearLayout>
 
-        <!-- Botões Play e Stop -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMiniPlay"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:backgroundTint="@color/spotifyGreen"
-            android:text="▶️"
+            android:text="@string/symbol_play"
             android:textStyle="bold"
-            android:textColor="@color/spotifyBlack"
-            android:cornerRadius="16dp" />
+            android:textColor="@color/spotifyBlack" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMiniStop"
@@ -180,9 +174,8 @@
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:backgroundTint="@color/spotifyBlack"
-            android:text="⏹️"
+            android:text="@string/symbol_stop"
             android:textColor="@android:color/white"
-            android:cornerRadius="16dp"
             android:layout_marginStart="8dp" />
     </LinearLayout>
 </LinearLayout>

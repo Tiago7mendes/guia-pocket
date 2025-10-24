@@ -14,6 +14,10 @@
     <string name="btn_spotify">Open on Spotify</string>
     <string name="btn_share">Share</string>
     <string name="btn_back">Back</string>
+    <string name="btn_tema">Theme</string>
+    <string name="btn_tema_escuro">🌙 Dark Theme</string>
+    <string name="btn_tema_claro">☀️ Light Theme</string>
+    <string name="btn_idioma">🌐 Language</string>
 
     <!-- Messages -->
     <string name="msg_share_title">Share song</string>

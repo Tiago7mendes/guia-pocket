@@ -1,25 +1,61 @@
 package com.example.guia_pocket.ui
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.guia_pocket.R
 import com.example.guia_pocket.adapter.MusicaAdapter
 import com.example.guia_pocket.databinding.ActivityMainBinding
 import com.example.guia_pocket.model.Musica
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var musicas: List<Musica>
+    private var darkMode = false
+    private var idiomaAtual = "pt"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // 🔹 Configura lista e dados
         loadData()
         setupList()
+
+        // 🔹 Controle de tema (claro/escuro)
+        var darkMode = false
+
+        binding.btnTema.setOnClickListener {
+            darkMode = !darkMode
+            if (darkMode) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                binding.btnTema.text = getString(R.string.btn_tema_claro)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                binding.btnTema.text = getString(R.string.btn_tema_escuro)
+            }
+        }
+
+        var idiomaAtual = "pt"
+        binding.btnIdioma.setOnClickListener {
+            idiomaAtual = if (idiomaAtual == "pt") "en" else "pt"
+            mudarIdioma(idiomaAtual)
+        }
+    }
+
+    private fun mudarIdioma(lang: String) {
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+        recreate()
     }
 
     private fun loadData() {

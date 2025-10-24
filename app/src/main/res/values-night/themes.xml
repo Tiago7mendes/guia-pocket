@@ -22,7 +22,5 @@
         <item name="android:navigationBarColor">@color/spotifyBlack</item>
         <item name="android:windowLightStatusBar">true</item>
 
-        <!-- Tipografia e formato -->
-        <item name="android:fontFamily">@android:font/sans-serif-medium</item>
     </style>
 </resources>

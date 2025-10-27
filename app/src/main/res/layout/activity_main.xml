@@ -21,7 +21,6 @@
             android:backgroundTint="@color/surface"
             android:text="@string/btn_tema"
             android:textColor="@color/textPrimary"
-            android:iconPadding="8dp"
             android:layout_marginEnd="8dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -30,8 +29,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/surface"
             android:text="@string/btn_idioma"
-            android:textColor="@color/textPrimary"
-            android:iconPadding="8dp" />
+            android:textColor="@color/textPrimary"/>
     </LinearLayout>
 
     <ListView

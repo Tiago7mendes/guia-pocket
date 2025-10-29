@@ -1,10 +1,12 @@
 package com.example.guia_pocket.ui
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import com.example.guia_pocket.R
 import com.example.guia_pocket.adapter.MusicaAdapter
 import com.example.guia_pocket.databinding.ActivityMainBinding
@@ -15,49 +17,103 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var musicas: List<Musica>
-    private var darkMode = false
-    private var idiomaAtual = "pt"
 
+    // chaves para SharedPreferences
+    private val PREFS_NAME = "app_prefs"
+    private val KEY_THEME = "pref_theme"    // "dark" ou "light"
+    private val KEY_LANG = "pref_lang"      // "pt" ou "en"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // 🔹 Configura lista e dados
+        applySavedTheme()
+        applySavedLocale()
         loadData()
         setupList()
+        initButtonsText()
 
-        // 🔹 Controle de tema (claro/escuro)
-        var darkMode = false
-
+        // 4) Listeners
         binding.btnTema.setOnClickListener {
-            darkMode = !darkMode
-            if (darkMode) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                binding.btnTema.text = getString(R.string.btn_tema_claro)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                binding.btnTema.text = getString(R.string.btn_tema_escuro)
-            }
+            toggleTheme()
         }
 
-        var idiomaAtual = "pt"
         binding.btnIdioma.setOnClickListener {
-            idiomaAtual = if (idiomaAtual == "pt") "en" else "pt"
-            mudarIdioma(idiomaAtual)
+            toggleLanguage()
+        }
+    }
+    private fun applySavedTheme() {
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val theme = prefs.getString(KEY_THEME, "light") ?: "light"
+        if (theme == "dark") {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 
-    private fun mudarIdioma(lang: String) {
+    private fun toggleTheme() {
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val current = prefs.getString(KEY_THEME, "light") ?: "light"
+        val new = if (current == "dark") "light" else "dark"
+
+        prefs.edit().putString(KEY_THEME, new).apply()
+
+        if (new == "dark") {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+        updateThemeButtonText(new)
+    }
+
+    private fun updateThemeButtonText(themeValue: String) {
+        // usa strings definidas nos resources
+        if (themeValue == "dark") {
+            binding.btnTema.text = getString(R.string.btn_tema_claro) // texto sugerido quando está em dark: "Tema Claro"
+        } else {
+            binding.btnTema.text = getString(R.string.btn_tema_escuro) // texto sugerido quando está em light: "Tema Escuro"
+        }
+    }
+
+    private fun initButtonsText() {
+        // inicializa texto do botão de tema
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val theme = prefs.getString(KEY_THEME, "light") ?: "light"
+        updateThemeButtonText(theme)
+
+        // inicializa texto do botão de idioma
+        val lang = prefs.getString(KEY_LANG, "pt") ?: "pt"
+        binding.btnIdioma.text = if (lang == "pt") getString(R.string.btn_idioma) else getString(R.string.btn_idioma)
+    }
+    private fun applySavedLocale() {
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val lang = prefs.getString(KEY_LANG, "pt") ?: "pt"
+        applyLocale(lang, save = false) // aplicar sem salvar de novo
+    }
+
+    private fun toggleLanguage() {
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val current = prefs.getString(KEY_LANG, "pt") ?: "pt"
+        val newLang = if (current == "pt") "en" else "pt"
+        prefs.edit().putString(KEY_LANG, newLang).apply()
+        applyLocale(newLang, save = true)
+    }
+
+    private fun applyLocale(lang: String, save: Boolean) {
+        try {
+            val localeList = LocaleListCompat.forLanguageTags(lang)
+            AppCompatDelegate.setApplicationLocales(localeList) // aplica globalmente
+            return
+        } catch (e: Exception) {
+        }
         val locale = Locale(lang)
         Locale.setDefault(locale)
-        val config = Configuration()
+        val config = Configuration(resources.configuration)
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
         recreate()
     }
-
     private fun loadData() {
         musicas = listOf(
             Musica(

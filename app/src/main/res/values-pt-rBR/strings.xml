@@ -26,4 +26,20 @@
     <string name="label_artista">Artista</string>
     <string name="symbol_play">▶️</string>
     <string name="symbol_stop">⏹️</string>
+
+    <!-- 🎵 Gêneros -->
+    <string name="genre_romantic_pop">Pop Romântico</string>
+    <string name="genre_alternative_pop">Pop Alternativo</string>
+    <string name="genre_soft_rock">Rock Suave</string>
+    <string name="genre_dance_pop">Pop Dançante</string>
+    <string name="genre_pop_soul">Pop Soul</string>
+    <string name="genre_indie_rock">Rock Indie</string>
+
+    <!-- 🎶 Descrições -->
+    <string name="desc_perfect">Uma balada emocionante do álbum Divide (2017).</string>
+    <string name="desc_wildflower">Uma faixa suave e atmosférica, com vocais marcantes e melodia envolvente.</string>
+    <string name="desc_yellow">Um dos maiores sucessos do Coldplay, símbolo da sonoridade emocional da banda.</string>
+    <string name="desc_levitating">Uma faixa vibrante e retrô do álbum Future Nostalgia (2020).</string>
+    <string name="desc_before_you_go">Um hino melancólico sobre amor e perda, lançado em 2019.</string>
+    <string name="desc_do_i_wanna_know">Uma faixa icônica com ritmo marcante e guitarra envolvente.</string>
 </resources>

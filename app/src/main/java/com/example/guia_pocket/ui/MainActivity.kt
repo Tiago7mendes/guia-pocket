@@ -117,38 +117,56 @@ class MainActivity : AppCompatActivity() {
     private fun loadData() {
         musicas = listOf(
             Musica(
-                R.drawable.edsheeran, "Perfect", "Ed Sheeran", "Romantic Pop",
-                "Uma balada emocionante do álbum Divide (2017).",
+                R.drawable.edsheeran,
+                "Perfect",
+                "Ed Sheeran",
+                getString(R.string.genre_romantic_pop),
+                getString(R.string.desc_perfect),
                 "https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v",
                 R.raw.perfect
             ),
             Musica(
-                R.drawable.billie, "Wildflower", "Billie Eilish", "Alternative Pop",
-                "Uma faixa suave e atmosférica, com vocais marcantes e melodia envolvente.",
-                "https://open.spotify.com/intl-pt/track/3QaPy1KgI7nu9FJEQUgn6h", // substitua pelo link real se quiser
+                R.drawable.billie,
+                "Wildflower",
+                "Billie Eilish",
+                getString(R.string.genre_alternative_pop),
+                getString(R.string.desc_wildflower),
+                "https://open.spotify.com/intl-pt/track/3QaPy1KgI7nu9FJEQUgn6h",
                 R.raw.wildflower
             ),
             Musica(
-                R.drawable.coldplay, "Yellow", "Coldplay", "Soft Rock",
-                "Um dos maiores sucessos do Coldplay, símbolo da sonoridade emocional da banda.",
+                R.drawable.coldplay,
+                "Yellow",
+                "Coldplay",
+                getString(R.string.genre_soft_rock),
+                getString(R.string.desc_yellow),
                 "https://open.spotify.com/track/3AJwUDP919kvQ9QcozQPxg",
                 R.raw.yellow
             ),
             Musica(
-                R.drawable.dualipa, "Levitating", "Dua Lipa", "Dance Pop",
-                "Uma faixa vibrante e retrô do álbum Future Nostalgia (2020).",
+                R.drawable.dualipa,
+                "Levitating",
+                "Dua Lipa",
+                getString(R.string.genre_dance_pop),
+                getString(R.string.desc_levitating),
                 "https://open.spotify.com/track/463CkQjx2Zk1yXoBuierM9",
                 R.raw.levitating
             ),
             Musica(
-                R.drawable.lewis, "Before You Go", "Lewis Capaldi", "Pop Soul",
-                "Um hino melancólico sobre amor e perda, lançado em 2019.",
+                R.drawable.lewis,
+                "Before You Go",
+                "Lewis Capaldi",
+                getString(R.string.genre_pop_soul),
+                getString(R.string.desc_before_you_go),
                 "https://open.spotify.com/track/7qEHsqek33rTcFNT9PFqLf",
                 R.raw.before_you_go
             ),
             Musica(
-                R.drawable.arctic, "Do I Wanna Know?", "Arctic Monkeys", "Indie Rock",
-                "Uma faixa icônica com ritmo marcante e guitarra envolvente.",
+                R.drawable.arctic,
+                "Do I Wanna Know?",
+                "Arctic Monkeys",
+                getString(R.string.genre_indie_rock),
+                getString(R.string.desc_do_i_wanna_know),
                 "https://open.spotify.com/track/5FVd6KXrgO9B3JPmC8OPst",
                 R.raw.do_i_wanna_know
             )

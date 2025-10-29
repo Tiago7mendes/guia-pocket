@@ -26,5 +26,21 @@
     <string name="label_artista">Artist</string>
     <string name="symbol_play">▶️</string>
     <string name="symbol_stop">⏹️</string>
+
+    <!-- 🎵 Genres -->
+    <string name="genre_romantic_pop">Romantic Pop</string>
+    <string name="genre_alternative_pop">Alternative Pop</string>
+    <string name="genre_soft_rock">Soft Rock</string>
+    <string name="genre_dance_pop">Dance Pop</string>
+    <string name="genre_pop_soul">Pop Soul</string>
+    <string name="genre_indie_rock">Indie Rock</string>
+
+    <!-- 🎶 Descriptions -->
+    <string name="desc_perfect">An emotional ballad from the album Divide (2017).</string>
+    <string name="desc_wildflower">A smooth and atmospheric track with striking vocals and an engaging melody.</string>
+    <string name="desc_yellow">One of Coldplays biggest hits, symbolizing the bands emotional sound.</string>
+    <string name="desc_levitating">A vibrant and retro track from the album Future Nostalgia (2020).</string>
+    <string name="desc_before_you_go">A melancholic anthem about love and loss, released in 2019.</string>
+    <string name="desc_do_i_wanna_know">An iconic track with a strong rhythm and captivating guitar riff.</string>
 </resources>
 

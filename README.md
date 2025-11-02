@@ -36,6 +36,29 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 
 ---
 
+## 🎨 Capturas de Tela
+
+<p align="center">
+  <img src="fto1.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto3.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto4.png" width="250" style="border-radius:16px; margin:5px;">
+</p>
+
+---
+
+## 🎥 Demonstração em Vídeo
+
+Se você quiser adicionar um vídeo mostrando o app em ação, basta subir o vídeo para o **YouTube** (ou gravar pelo celular e enviar como `.mp4`).
+
+Depois, adicione o link assim:
+
+```markdown
+🎬 **Assista ao vídeo demonstrativo:**  
+👉 [Clique aqui para ver o app em funcionamento](https://www.youtube.com/watch?v=SEU_VIDEO_ID)
+
+---
+
 ## ⚙️ Como Executar
 
 1. Clone o repositório:  

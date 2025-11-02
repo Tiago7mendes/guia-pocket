@@ -45,7 +45,7 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
   <img src="app/imagens/fto2.png" width="250" style="border-radius:16px; margin:5px;">
 </div>
 
-<br>
+<br><br>
 
 <h3 align="center">Dados da Música</h3>
 
@@ -53,18 +53,14 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
   <img src="app/imagens/fto4.png" width="250" style="border-radius:16px; margin:5px;">
   <img src="app/imagens/fto3.png" width="250" style="border-radius:16px; margin:5px;">
 </div>
+<br>
 
 ---
 
-## 🎥 Demonstração em Vídeo
+## 🎬 Demonstração em Vídeo
 
-Se você quiser adicionar um vídeo mostrando o app em ação, basta subir o vídeo para o **YouTube** (ou gravar pelo celular e enviar como `.mp4`).
-
-Depois, adicione o link assim:
-
-```markdown
-🎬 **Assista ao vídeo demonstrativo:**  
-👉 [Clique aqui para ver o app em funcionamento](https://www.youtube.com/watch?v=SEU_VIDEO_ID)
+🎥 **Assista à demonstração do app:**  
+👉 [Clique aqui para ver o vídeo no YouTube](https://youtube.com/shorts/1BmojnYTTHY?feature=share)
 
 ---
 

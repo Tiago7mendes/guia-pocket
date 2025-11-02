@@ -36,14 +36,23 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 
 ---
 
-## 🎨 Capturas de Tela
+## 🎨 Capturas de Tela (Esquerdo Inglês | Direito Português)
 
-<p align="center">
-  <img src="fto1.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto2.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto3.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto4.png" width="250" style="border-radius:16px; margin:5px;">
-</p>
+<h3 align="center">Catalogo de Música</h3>
+
+<div align="center">
+  <img src="app/imagens/fto1.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto2.png" width="250" style="border-radius:16px; margin:5px;">
+</div>
+
+<br>
+
+<h3 align="center">Dados da Música</h3>
+
+<div align="center">
+  <img src="app/imagens/fto4.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto3.png" width="250" style="border-radius:16px; margin:5px;">
+</div>
 
 ---
 

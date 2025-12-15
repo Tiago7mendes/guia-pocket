@@ -1,13 +1,21 @@
 package com.example.guia_pocket.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 
+@Entity(tableName = "musica")
 data class Musica(
-    val capa: Int,
+
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+
+    val capaUri: String,
     val nome: String,
     val artista: String,
     val genero: String,
     val descricao: String,
-    val linkSpotify: String,
-    val audioResId: Int
+    val audioUri: String,
+    val linkSpotify: String
+
 ) : Serializable

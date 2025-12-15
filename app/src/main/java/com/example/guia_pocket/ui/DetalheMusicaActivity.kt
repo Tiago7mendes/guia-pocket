@@ -2,11 +2,11 @@ package com.example.guia_pocket.ui
 
 import android.content.Intent
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.example.guia_pocket.databinding.ActivityDetalheMusicaBinding
 import com.example.guia_pocket.model.Musica
 
@@ -14,6 +14,7 @@ class DetalheMusicaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetalheMusicaBinding
     private lateinit var musica: Musica
+
     private var player: MediaPlayer? = null
     private var tocando = false
     private val handler = Handler(Looper.getMainLooper())
@@ -23,52 +24,64 @@ class DetalheMusicaActivity : AppCompatActivity() {
         binding = ActivityDetalheMusicaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        musica = intent.getSerializableExtra("musica") as Musica
-
+        loadData()
         setupViews()
         setupListeners()
     }
 
+    private fun loadData() {
+        musica = intent.getSerializableExtra("musica", Musica::class.java) as Musica
+    }
+
     private fun setupViews() {
-        binding.imgCapa.setImageResource(musica.capa)
-        binding.imgMiniCapa.setImageResource(musica.capa)
         binding.tvNome.text = musica.nome
         binding.tvArtista.text = musica.artista
-        binding.tvMiniNome.text = musica.nome
-        binding.tvMiniArtista.text = musica.artista
         binding.tvGenero.text = musica.genero
         binding.tvDescricao.text = musica.descricao
+
+        binding.tvMiniNome.text = musica.nome
+        binding.tvMiniArtista.text = musica.artista
+
+        binding.imgCapa.setImageURI(musica.capaUri.toUri())
+        binding.imgMiniCapa.setImageURI(musica.capaUri.toUri())
     }
 
     private fun setupListeners() {
-        // Botão Spotify
+
         binding.btnSpotify.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(musica.linkSpotify)))
+            if (musica.linkSpotify.isNotBlank()) {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = musica.linkSpotify.toUri()
+                startActivity(intent)
+            }
         }
 
-        // Botão compartilhar
         binding.btnShare.setOnClickListener {
-            val shareIntent = Intent(Intent.ACTION_SEND)
-            shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "🎵 ${musica.nome} - ${musica.artista}\n${musica.linkSpotify}")
-            startActivity(Intent.createChooser(shareIntent, getString(com.example.guia_pocket.R.string.msg_share_title)))
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(
+                Intent.EXTRA_TEXT,
+                "🎵 ${musica.nome} - ${musica.artista}\n${musica.linkSpotify}"
+            )
+            startActivity(Intent.createChooser(intent, "Compartilhar música"))
         }
 
-        // Botão voltar
         binding.btnVoltar.setOnClickListener {
-            player?.release()
+            liberarPlayer()
             finish()
         }
 
-        // 🎵 Mini player
         binding.btnMiniPlay.setOnClickListener {
             if (!tocando) {
                 if (player == null) {
-                    player = MediaPlayer.create(this, musica.audioResId)
-                    player?.setOnCompletionListener {
-                        tocando = false
-                        binding.btnMiniPlay.text = "▶️"
-                        binding.progressoMusica.progress = 0
+                    player = MediaPlayer().apply {
+                        setDataSource(this@DetalheMusicaActivity, musica.audioUri.toUri())
+                        prepare()
+                        setOnCompletionListener {
+                            tocando = false
+                            binding.btnMiniPlay.text = "▶️"
+                            binding.progressoMusica.progress = 0
+                        }
                     }
                 }
                 player?.start()
@@ -83,12 +96,9 @@ class DetalheMusicaActivity : AppCompatActivity() {
         }
 
         binding.btnMiniStop.setOnClickListener {
-            player?.stop()
-            player?.release()
-            player = null
-            tocando = false
-            binding.btnMiniPlay.text = "▶️"
+            liberarPlayer()
             binding.progressoMusica.progress = 0
+            binding.btnMiniPlay.text = "▶️"
         }
     }
 
@@ -98,16 +108,23 @@ class DetalheMusicaActivity : AppCompatActivity() {
                 player?.let {
                     val progresso = (it.currentPosition * 100) / it.duration
                     binding.progressoMusica.progress = progresso
-                    if (tocando) handler.postDelayed(this, 500)
+                    if (tocando) {
+                        handler.postDelayed(this, 500)
+                    }
                 }
             }
         }, 500)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    private fun liberarPlayer() {
+        tocando = false
         handler.removeCallbacksAndMessages(null)
         player?.release()
         player = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        liberarPlayer()
     }
 }

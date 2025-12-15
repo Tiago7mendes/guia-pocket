@@ -35,6 +35,16 @@
     <string name="genre_pop_soul">Pop Soul</string>
     <string name="genre_indie_rock">Rock Indie</string>
 
+    <string name="hint_nome_musica">Música</string>
+    <string name="hint_artista">Artista</string>
+    <string name="hint_genero">Genero Musical</string>
+    <string name="hint_descricao">Descrição</string>
+    <string name="btn_selecionar_audio">Audio</string>
+    <string name="btn_salvar_musica">Salvar</string>
+    <string name="btn_voltar">Cancelar</string>
+    <string name="btn_add_music">Adicionar Musica</string>
+    <string name="filtrar">Filtrar por Artista</string>
+
     <!-- 🎶 Descrições -->
     <string name="desc_perfect">Uma balada emocionante do álbum Divide (2017).</string>
     <string name="desc_wildflower">Uma faixa suave e atmosférica, com vocais marcantes e melodia envolvente.</string>

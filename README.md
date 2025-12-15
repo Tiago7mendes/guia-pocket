@@ -58,12 +58,12 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 
 ## 🎥 Demonstração em Vídeo
 
-```markdown
 🎬 **Assista ao vídeo demonstrativo versão 1:**  
 👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/SbDnb5AudpA?feature=share)
 
 🎬 **Assista ao vídeo demonstrativo versão 2:**  
 👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/qgaSVQUqmhE?feature=share)
+
 ---
 
 ## ⚙️ Como Executar

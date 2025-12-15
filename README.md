@@ -38,6 +38,7 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 
 ## 🎨 Capturas de Tela
 
+- **Versão 1**
 <p align="center">
   <img src="fto1.png" width="250" style="border-radius:16px; margin:5px;">
   <img src="fto2.png" width="250" style="border-radius:16px; margin:5px;">
@@ -45,18 +46,24 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
   <img src="fto4.png" width="250" style="border-radius:16px; margin:5px;">
 </p>
 
+- **Versão 2**
+<p align="center">
+  <img src="fto1_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto2_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto3_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="fto4_p2.png" width="250" style="border-radius:16px; margin:5px;">
+</p>
+
 ---
 
 ## 🎥 Demonstração em Vídeo
 
-Se você quiser adicionar um vídeo mostrando o app em ação, basta subir o vídeo para o **YouTube** (ou gravar pelo celular e enviar como `.mp4`).
-
-Depois, adicione o link assim:
-
 ```markdown
-🎬 **Assista ao vídeo demonstrativo:**  
-👉 [Clique aqui para ver o app em funcionamento](https://www.youtube.com/watch?v=SEU_VIDEO_ID)
+🎬 **Assista ao vídeo demonstrativo versão 1:**  
+👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/SbDnb5AudpA?feature=share)
 
+🎬 **Assista ao vídeo demonstrativo versão 2:**  
+👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/qgaSVQUqmhE?feature=share)
 ---
 
 ## ⚙️ Como Executar

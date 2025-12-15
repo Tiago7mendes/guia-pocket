@@ -64,6 +64,9 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 🎬 **Assista ao vídeo demonstrativo versão 2:**  
 👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/qgaSVQUqmhE?feature=share)
 
+🎬 **Assista ao vídeo explicativo do App:**  
+👉 [Clique aqui para ver o app em funcionamento](https://youtu.be/3OJGKS8WRc0)
+
 ---
 
 ## ⚙️ Como Executar

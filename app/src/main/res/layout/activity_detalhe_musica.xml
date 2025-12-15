@@ -1,181 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/background">
 
-    <!-- Conteúdo principal rolável -->
+    <!-- Conteúdo rolável -->
     <ScrollView
-        android:layout_width="match_parent"
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="20dp">
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/miniPlayer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
-            <!-- Capa da música -->
+            <!-- Capa -->
             <ImageView
                 android:id="@+id/imgCapa"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
-                android:layout_marginBottom="16dp"
                 android:scaleType="centerCrop"
-                android:background="@drawable/bg_card_image" />
+                android:background="@drawable/bg_card_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Nome -->
             <TextView
                 android:id="@+id/tvNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_description"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:textColor="@color/textPrimary"
-                android:layout_marginBottom="4dp" />
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/imgCapa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Artista -->
             <TextView
                 android:id="@+id/tvArtista"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_artist"
                 android:textSize="18sp"
                 android:textColor="@color/textSecondary"
-                android:layout_marginBottom="2dp" />
+                app:layout_constraintTop_toBottomOf="@id/tvNome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Gênero -->
             <TextView
                 android:id="@+id/tvGenero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_genre"
                 android:textSize="15sp"
                 android:textColor="@color/spotifyGreen"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp"
+                app:layout_constraintTop_toBottomOf="@id/tvArtista"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <!-- Descrição -->
             <TextView
                 android:id="@+id/tvDescricao"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/label_description"
                 android:textSize="15sp"
                 android:textColor="@color/textSecondary"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvGenero"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Botões principais -->
+            <!-- Botões -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSpotify"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_spotify"
-                android:textStyle="bold"
                 android:backgroundTint="@color/spotifyGreen"
                 android:textColor="@color/spotifyBlack"
-                android:layout_marginBottom="10dp" />
+                app:layout_constraintTop_toBottomOf="@id/tvDescricao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnShare"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_share"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/spotifyGreenDark"
                 android:textColor="@color/spotifyBlack"
-                android:layout_marginBottom="10dp" />
+                app:layout_constraintTop_toBottomOf="@id/btnSpotify"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnVoltar"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/btn_back"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/spotifyBlack"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnShare"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <!-- Mini player fixo -->
-    <LinearLayout
+    <!-- Mini Player -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/miniPlayer"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="90dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
         android:padding="12dp"
         android:background="@color/surface"
-        android:elevation="8dp">
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Capa pequena -->
         <ImageView
             android:id="@+id/imgMiniCapa"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:scaleType="centerCrop"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/bg_card_image"/>
+            android:background="@drawable/bg_card_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-        <!-- Nome e artista -->
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvMiniNome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:textStyle="bold"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@id/imgMiniCapa"
+            app:layout_constraintTop_toTopOf="@id/imgMiniCapa"
+            app:layout_constraintEnd_toStartOf="@id/btnMiniPlay" />
 
-            <TextView
-                android:id="@+id/tvMiniNome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_nome_musica"
-                android:textStyle="bold"
-                android:textColor="@color/textPrimary"
-                android:textSize="15sp" />
+        <TextView
+            android:id="@+id/tvMiniArtista"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@id/tvMiniNome"
+            app:layout_constraintTop_toBottomOf="@id/tvMiniNome"
+            app:layout_constraintEnd_toEndOf="@id/tvMiniNome" />
 
-            <TextView
-                android:id="@+id/tvMiniArtista"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_artista"
-                android:textColor="@color/textSecondary"
-                android:textSize="13sp" />
-
-            <ProgressBar
-                android:id="@+id/progressoMusica"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="6dp"
-                android:layout_marginTop="8dp"
-                android:progress="0"
-                android:progressTint="@color/spotifyGreen"
-                android:backgroundTint="@color/divider"
-                android:max="100" />
-        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressoMusica"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:max="100"
+            app:layout_constraintStart_toStartOf="@id/tvMiniNome"
+            app:layout_constraintEnd_toEndOf="@id/tvMiniNome"
+            app:layout_constraintTop_toBottomOf="@id/tvMiniArtista" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMiniPlay"
-            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:backgroundTint="@color/spotifyGreen"
             android:text="@string/symbol_play"
-            android:textStyle="bold"
-            android:textColor="@color/spotifyBlack" />
+            app:layout_constraintEnd_toStartOf="@id/btnMiniStop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMiniStop"
-            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="52dp"
             android:layout_height="52dp"
-            android:backgroundTint="@color/spotifyBlack"
             android:text="@string/symbol_stop"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
-</LinearLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

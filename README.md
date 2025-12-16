@@ -40,18 +40,21 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 
 - **Versão 1**
 <p align="center">
-  <img src="fto1.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto2.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto3.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto4.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto1.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto2.png" width="250" style="border-radius:16px; margin:5px;">
+  <br><br><br>
+  <img src="app/imagens/fto3.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto4.png" width="250" style="border-radius:16px; margin:5px;">
 </p>
+<br>
 
 - **Versão 2**
 <p align="center">
-  <img src="fto1_p2.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto2_p2.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto3_p2.png" width="250" style="border-radius:16px; margin:5px;">
-  <img src="fto4_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto1_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto2_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <br><br><br>
+  <img src="app/imagens/fto3_p2.png" width="250" style="border-radius:16px; margin:5px;">
+  <img src="app/imagens/fto4_p2.png" width="250" style="border-radius:16px; margin:5px;">
 </p>
 
 ---
@@ -65,7 +68,7 @@ O projeto utiliza **View Binding**, **Material Design 3**, e **Intents** (explí
 👉 [Clique aqui para ver o app em funcionamento](https://youtube.com/shorts/qgaSVQUqmhE?feature=share)
 
 🎬 **Assista ao vídeo explicativo do App:**  
-👉 [Clique aqui para ver o app em funcionamento](https://youtu.be/3OJGKS8WRc0)
+👉 [Clique aqui para ver a explicação](https://youtu.be/3OJGKS8WRc0)
 
 ---
 
